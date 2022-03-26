@@ -18,22 +18,22 @@ export default function App() {
     {
       id: 3,
       name: "Akash Singh",
-      favourite: true
+      favourite: false
     },
     {
       id: 4,
-      name: "Akash Singh",
+      name: "Shubham Bhagat",
       favourite: true
     },
     {
       id: 5,
-      name: "Akash Singh",
+      name: "Suraj Tiwari",
       favourite: true
     },
     {
       id: 6,
-      name: "Akash Singh",
-      favourite: true
+      name: "Amar Shende",
+      favourite: false
     }
   ];
   const [friendsData, setFriendsData] = useState(friendsList);

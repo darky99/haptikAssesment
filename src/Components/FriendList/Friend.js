@@ -3,7 +3,7 @@ export default function Friend(props) {
   return (
     <div className="paperBlock">
       <div className="content nameCont">
-        <p>{data?.name}</p>
+        <h4>{data?.name}</h4>
         <span> is your friend</span>
       </div>
 
