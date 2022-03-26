@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 export default function AddFriend(props) {
   const { onclick } = props;
   const [name, setName] = useState();
@@ -7,6 +7,7 @@ export default function AddFriend(props) {
       <input
         id="myInput"
         type="text"
+        className="addField"
         placeholder="Enter Friends Name"
         onChange={(e) => {
           const { value } = e.target;
@@ -16,11 +17,16 @@ export default function AddFriend(props) {
       />
       <button
         onClick={() => {
-          onclick(name);
+          if (name.length > 0) {
+            onclick(name);
+          } else {
+            alert("Please enter name");
+          }
           setName("");
         }}
+        className="addBtn"
       >
-        Submit
+        ADD
       </button>
     </div>
   );

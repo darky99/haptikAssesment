@@ -9,22 +9,23 @@ export default function Friend(props) {
 
       <div className="content">
         <button
-          class="btn"
+          className={data?.favourite ? "btnClicked" : "btn"}
           onClick={() => {
-            fav(data.id);
+            fav(data?.id);
           }}
         >
-          <i class="fa fa-star"></i>
+          <i className="fa fa-star"></i>
         </button>
       </div>
       <div className="content">
         <button
-          class="btn"
+          className="btn"
           onClick={() => {
+            alert("are you sure");
             deleteFriend(data.id);
           }}
         >
-          <i class="fa fa-trash"></i>
+          <i className="fa fa-trash"></i>
         </button>
       </div>
     </div>
