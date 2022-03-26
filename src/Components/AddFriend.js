@@ -1,7 +1,7 @@
 import { useState } from "react";
 export default function AddFriend(props) {
   const { onclick } = props;
-  const [name, setName] = useState();
+  const [name, setName] = useState("");
   return (
     <div className="addFrnd">
       <input

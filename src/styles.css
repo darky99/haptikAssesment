@@ -66,8 +66,10 @@
   justify-content: center;
   flex-direction: column;
   border: solid 1px grey;
+  border-radius: 5px;
   background-color: #dddddd;
-  box-shadow: 2px 3px rgb(105, 105, 105, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
 }
 
 .searchFriend {
@@ -136,3 +138,7 @@ input:focus {
 .pagination {
   float: right;
 }
+
+/* body {
+  background-color: #000;
+} */

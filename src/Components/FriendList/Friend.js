@@ -21,7 +21,7 @@ export default function Friend(props) {
         <button
           className="btn"
           onClick={() => {
-            alert("are you sure");
+            alert("Are you sure you want to Delete ");
             deleteFriend(data.id);
           }}
         >
