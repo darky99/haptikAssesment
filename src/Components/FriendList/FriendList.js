@@ -8,6 +8,7 @@ export default function FriendList(props) {
   const [filterData, setFilterData] = useState("");
   const [pageNo, setPageNo] = useState(1);
   const [disable, setDisable] = useState(false);
+  const [sorted, setSorted] = useState(false);
 
   useEffect(() => {
     setFilterData(data);
@@ -42,10 +43,32 @@ export default function FriendList(props) {
     setPageNo(pageNo - 1);
   };
 
+  const sortHandler = () => {
+    console.log("sort", sorted);
+    if (sorted === false) {
+      setSorted(true);
+      const sortData = [...filterData];
+      sortData.sort((x, y) => {
+        return y.favourite - x.favourite;
+      });
+      setFilterData(sortData);
+    } else {
+      let temp = [...filterData].reverse();
+      setFilterData(temp);
+    }
+  };
+
   return (
     <div className="friendList">
       <div className="boxHeader">
-        <h3>Friends List</h3>
+        <div className="subHeaderDiv">
+          <h3>Friends List</h3>
+        </div>
+        <div className="sortDiv">
+          <button className="addBtn" onClick={sortHandler}>
+            Sort
+          </button>
+        </div>
       </div>
       <SearchFriend searchFriend={searchFriend} />
       {filterData.slice(pageNo === 1 ? 0 : (pageNo - 1) * 4, 4 * pageNo)
@@ -56,7 +79,6 @@ export default function FriendList(props) {
         filterData
           .slice(pageNo === 1 ? 0 : (pageNo - 1) * 4, 4 * pageNo)
           .map((friend) => {
-            //console.log(friend.id);
             return (
               <Friend
                 key={friend.id}
